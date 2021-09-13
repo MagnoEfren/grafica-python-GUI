@@ -116,23 +116,18 @@ frame.config(cursor = "heart")
 labelx = StringVar(raiz, "VOL: 0.00")
 
 label = Label(frame,textvariable = labelx, bg= "#5CFE05",fg="black", font="Helvetica 13 bold",width=11 ,justify="center")
-label.pack()
 label.grid(row=0,column=0, padx=5,ipady=8, pady=10)
 
 Iniciar = Button(frame,command= Iniciar, text= "Iniciar ",bg="blue",fg="white", font="Helvetica 14 bold",width=9,justify="center")
-Iniciar.pack
 Iniciar.grid(row=1,column=0, padx=5,pady=5)
 
 terminar = Button(frame,command= Terminar, text= "Terminar",bg="blue",fg="white", font="Helvetica 14 bold",width=9)
-terminar.pack
 terminar.grid(row=2,column=0, padx=5,pady=5)
 
 limpiar = Button(frame,command= Limpiar, text= "Limpiar ",bg="blue",fg="white", font="Helvetica 14 bold",width=9,justify="center")
-limpiar.pack
 limpiar.grid(row=3,column=0, padx=5,pady=5)
 
 salir = Button(frame,command= Salir, width=9 ,text= "SALIR",bg="red", font="Helvetica 14 bold",justify="center")
-salir.pack
 salir.grid(row=4,column=0, padx=5,pady=125)
 
 raiz.mainloop()
