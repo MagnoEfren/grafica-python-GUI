@@ -13,8 +13,6 @@ void setup() {
 void loop() {
   lectura = analogRead(A0);  
   voltaje = ((lectura/1023)*5.5);
-
   Serial.println(voltaje);
-
   delay(100);
 }
