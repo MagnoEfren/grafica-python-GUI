@@ -35,7 +35,6 @@ def Iniciar():
     anim = animacion.FuncAnimation(fig, plotData,  fargs=(muestraD,lines),interval = 100, blit = False )
     plt.show()
     
-
 def DatosA():
     time.sleep(1)
     arduino.reset_input_buffer()
@@ -44,15 +43,12 @@ def DatosA():
         global datos 
         datos = float(arduino.readline().decode('utf-8'))
         isReceive = True
-
 def plotData(self,muestraD,lines):
     data.append(datos)
     lines.set_data(range(muestraD), data)
     labelx.set("VOL:" + str(datos)) 
-
 thread = Thread(target = DatosA) 
- 
-def Salir():
+ def Salir():
     global isRun
     isRun = False 
     thread.join()
@@ -61,8 +57,6 @@ def Salir():
     raiz.destroy()
     raiz.quit()
     print("proceso finalizado")
-
-
 def Terminar():  
     global isRun
     global isReceiving 
@@ -72,7 +66,6 @@ def Terminar():
     thread.join(timeout=0.3)
     arduino.close()
     datos=00.0
-
 # , figsize=(6, 5)   tamaño / , dpi=75  zoom / plt.cla()  borra  nombres x e y /
 fig = plt.figure(facecolor="0.55",figsize=(6, 4), clear=True, dpi=100)
 ax = plt.axes(xlim=(xmin,xmax),ylim=(ymin,ymax))
@@ -83,8 +76,7 @@ lines = ax.plot([] ,[], 'r')[0]
 
 def Limpiar():
     fig.clf()
-
-
+    
 raiz = Tk()
 raiz.protocol("WM_DELATE_WINDOW",Salir)
 raiz.config(bg = "black")
