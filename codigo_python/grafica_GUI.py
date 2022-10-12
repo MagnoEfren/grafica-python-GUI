@@ -43,6 +43,7 @@ def DatosA():
         global datos 
         datos = float(arduino.readline().decode('utf-8'))
         isReceive = True
+        
 def plotData(self,muestraD,lines):
     data.append(datos)
     lines.set_data(range(muestraD), data)
