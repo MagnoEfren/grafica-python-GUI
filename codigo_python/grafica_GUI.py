@@ -49,7 +49,8 @@ def plotData(self,muestraD,lines):
     lines.set_data(range(muestraD), data)
     labelx.set("VOL:" + str(datos)) 
 thread = Thread(target = DatosA) 
- def Salir():
+
+def Salir():
     global isRun
     isRun = False 
     thread.join()
@@ -67,6 +68,7 @@ def Terminar():
     thread.join(timeout=0.3)
     arduino.close()
     datos=00.0
+    
 # , figsize=(6, 5)   tamaño / , dpi=75  zoom / plt.cla()  borra  nombres x e y /
 fig = plt.figure(facecolor="0.55",figsize=(6, 4), clear=True, dpi=100)
 ax = plt.axes(xlim=(xmin,xmax),ylim=(ymin,ymax))
@@ -104,6 +106,4 @@ limpiar = Button(frame,command= Limpiar, text= "Limpiar ",bg="blue",fg="white", 
 limpiar.grid(row=3,column=0, padx=5,pady=5)
 salir = Button(frame,command= Salir, width=9 ,text= "SALIR",bg="red", font="Helvetica 14 bold",justify="center")
 salir.grid(row=4,column=0, padx=5,pady=125)
-
 raiz.mainloop()
-
